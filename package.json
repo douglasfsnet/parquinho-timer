@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tailwindcss -i src/index.css -o src/tailwind-compiled.css && vite --port=3000 --host=0.0.0.0",
-    "build": "tailwindcss -i src/index.css -o src/tailwind-compiled.css --minify && vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
+    "build": "tailwindcss -i src/index.css -o src/tailwind-compiled.css --minify && vite build",
     "start": "node dist/server.cjs",
     "clean": "rm -rf dist server.js parquinho_local_db.json",
     "lint": "tsc --noEmit"
