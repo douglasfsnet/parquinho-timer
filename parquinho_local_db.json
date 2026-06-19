@@ -1,0 +1,30 @@
+{
+  "toys": [
+    { "id": "t1", "name": "Piscina de Bolinhas", "valuePerMinute": 0.50, "color": "blue", "icon": "Smile", "capacityLimit": 15 },
+    { "id": "t2", "name": "Escorregador", "valuePerMinute": 0.50, "color": "indigo", "icon": "Flame", "capacityLimit": 8 },
+    { "id": "t3", "name": "Cama Elástica", "valuePerMinute": 0.50, "color": "rose", "icon": "Compass", "capacityLimit": 10 },
+    { "id": "t4", "name": "Kid Play", "valuePerMinute": 0.60, "color": "amber", "icon": "Smile", "capacityLimit": 12 },
+    { "id": "t5", "name": "Tombo Legal", "valuePerMinute": 0.70, "color": "emerald", "icon": "Dice6", "capacityLimit": 5 },
+    { "id": "t6", "name": "Mini Futebol", "valuePerMinute": 0.50, "color": "teal", "icon": "Flame", "capacityLimit": 6 },
+    { "id": "t7", "name": "Carrinhos", "valuePerMinute": 0.80, "color": "violet", "icon": "Timer", "capacityLimit": 4 }
+  ],
+  "activeClients": [],
+  "pricingConfig": {
+    "valuePerMinute": 0.50,
+    "pack10": 5.00,
+    "pack15": 7.50,
+    "pack20": 10.00,
+    "pack30": 15.00
+  },
+  "history": [],
+  "staffList": [
+    {
+      "id": "first_admin",
+      "name": "Douglas Silva",
+      "email": "douglasfsnet@gmail.com",
+      "password": "dfsnet23",
+      "role": "Admin",
+      "createdAt": 1718813185000
+    }
+  ]
+}
