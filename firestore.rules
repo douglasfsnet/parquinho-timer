@@ -1,0 +1,34 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default fallback - deny everything
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    
+    // Brinquedos / Toys
+    match /Brinquedos/{toyId} {
+      allow read, write: if true;
+    }
+    
+    // Clientes / Clients
+    match /Clientes/{clientId} {
+      allow read, write: if true;
+    }
+    
+    // Configuracoes / Configurations
+    match /Configuracoes/{configId} {
+      allow read, write: if true;
+    }
+    
+    // Historico / Logs
+    match /Historico/{logId} {
+      allow read, write: if true;
+    }
+    
+    // Usuarios / Users / Staff Members
+    match /Usuarios/{userId} {
+      allow read, write: if true;
+    }
+  }
+}

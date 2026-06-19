@@ -1,0 +1,40 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {},
+  "name": "parquinho-timer",
+  "path": "/home/ubuntu/parquinho-timer",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "3RkCDV6PD8XmhV7mtsp7Db",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "EXPO_APP_QR_URL": "exps://8081-ir61pa8lf0nu1nc2x4l7m-703d24b2.us2.manus.computer",
+    "EXPO_PACKAGER_PROXY_URL": "https://8081-ir61pa8lf0nu1nc2x4l7m-703d24b2.us2.manus.computer",
+    "EXPO_PUBLIC_API_BASE_URL": "https://3000-ir61pa8lf0nu1nc2x4l7m-703d24b2.us2.manus.computer",
+    "JWT_SECRET": "5dw9rweZGtkjMK2wdZx3mb",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "douglasfsnet DfsNet",
+    "OWNER_OPEN_ID": "2vgGPNJgzZTAUKHk9Dupdd",
+    "REACT_NATIVE_PACKAGER_HOSTNAME": "8081-ir61pa8lf0nu1nc2x4l7m-703d24b2.us2.manus.computer",
+    "VERCEL_BLOB_READ_WRITE_TOKEN": "your_vercel_blob_token",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "1cb5f312-9c9a-4747-a7b4-adb0e9ae94b4",
+    "VITE_APP_ID": "Hh7kvSNu9HzXrug8HuBA9n",
+    "VITE_APP_LOGO": "https://d2xsxph8kpxj0f.cloudfront.net/310419663032202004/Hh7kvSNu9HzXrug8HuBA9n/icon-mF2Xx5vqWmfhTJJaMFW48J.png",
+    "VITE_APP_TITLE": "Parquinho Timer",
+    "VITE_FRONTEND_FORGE_API_KEY": "8B2H42BHvXx7A9PKAH7H32",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "app",
+  "test_command": "pnpm test"
+}

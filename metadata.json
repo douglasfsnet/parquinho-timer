@@ -1,0 +1,6 @@
+{
+  "name": "Parquinho Timer",
+  "description": "Sistema profissional para controle de tempo e faturamento de parquinhos infantis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
