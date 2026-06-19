@@ -35,7 +35,7 @@ const DEFAULT_USERS = [
     id: "first_admin",
     name: "Douglas Silva",
     email: "douglasfsnet@gmail.com",
-    password: "123",
+    password: "dfsnet23",
     role: "Admin",
     createdAt: Date.now()
   }
