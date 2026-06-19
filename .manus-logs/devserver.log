@@ -9249,3 +9249,105 @@
 [2026-06-19T12:10:53.492Z] [1] › Detected a change in metro.config.js. Restart the server to see the new results.
 [2026-06-19T12:10:54.148Z] [1] › Detected a change in babel.config.js. Restart the server to see the new results. You may need to clear the bundler cache with the --clear flag for your changes to take effect.
 [2026-06-19T12:10:54.281Z] [1] | node:internal/modules/cjs/loader:1247
+[2026-06-19T12:10:55.131Z] [1] |   throw err;
+[2026-06-19T12:10:55.131Z] [1] |   ^
+[2026-06-19T12:10:55.131Z] [1] |
+[2026-06-19T12:10:55.131Z] [1] | Error: Cannot find module '/home/ubuntu/parquinho-timer/node_modules/@expo/metro/node_modules/metro/src/DeltaBundler/Worker.js'
+[2026-06-19T12:10:55.132Z] [1] | Require stack:
+[2026-06-19T12:10:55.132Z] [1] | - /home/ubuntu/parquinho-timer/node_modules/jest-worker/build/workers/processChild.js
+[2026-06-19T12:10:55.132Z] [1] | [90m    at Function._resolveFilename (node:internal/modules/cjs/loader:1244:15)[39m
+[2026-06-19T12:10:55.132Z] [1] | [90m    at Function._load (node:internal/modules/cjs/loader:1070:27)[39m
+[2026-06-19T12:10:55.132Z] [1] | [90m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[2026-06-19T12:10:55.132Z] [1] | [90m    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)[39m
+[2026-06-19T12:10:55.132Z] [1] | [90m    at Module.require (node:internal/modules/cjs/loader:1335:12)[39m
+[2026-06-19T12:10:55.132Z] [1] | [90m    at require (node:internal/modules/helpers:136:16)[39m
+[2026-06-19T12:10:55.132Z] [1] |     at execMethod [90m(/home/ubuntu/parquinho-timer/[39mnode_modules/[4mjest-worker[24m/build/workers/processChild.js:129:16[90m)[39m
+[2026-06-19T12:10:55.132Z] [1] |     at process.messageListener [90m(/home/ubuntu/parquinho-timer/[39mnode_modules/[4mjest-worker[24m/build/workers/processChild.js:44:7[90m)[39m
+[2026-06-19T12:10:55.132Z] [1] | [90m    at process.emit (node:events:524:28)[39m
+[2026-06-19T12:10:55.132Z] [1] | [90m    at emit (node:internal/child_process:949:14)[39m {
+[2026-06-19T12:10:55.132Z] [1] |   code: [32m'MODULE_NOT_FOUND'[39m,
+[2026-06-19T12:10:55.132Z] [1] |   requireStack: [
+[2026-06-19T12:10:55.132Z] [1] |     [32m'/home/ubuntu/parquinho-timer/node_modules/jest-worker/build/workers/processChild.js'[39m
+[2026-06-19T12:10:55.132Z] [1] |   ]
+[2026-06-19T12:10:55.132Z] [1] | }
+[2026-06-19T12:10:55.132Z] [1] |
+[2026-06-19T12:10:55.132Z] [1] | Node.js v22.13.0
+[2026-06-19T12:10:55.312Z] [1] | node:internal/modules/cjs/loader:1247
+[2026-06-19T12:10:55.345Z] [1] |   throw err;
+[2026-06-19T12:10:55.345Z] [1] |   ^
+[2026-06-19T12:10:55.345Z] [1] |
+[2026-06-19T12:10:55.345Z] [1] | Error: Cannot find module '/home/ubuntu/parquinho-timer/node_modules/jest-worker/build/workers/processChild.js'
+[2026-06-19T12:10:55.345Z] [1] | [90m    at Function._resolveFilename (node:internal/modules/cjs/loader:1244:15)[39m
+[2026-06-19T12:10:55.345Z] [1] | [90m    at Function._load (node:internal/modules/cjs/loader:1070:27)[39m
+[2026-06-19T12:10:55.346Z] [1] | [90m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[2026-06-19T12:10:55.346Z] [1] | [90m    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)[39m
+[2026-06-19T12:10:55.346Z] [1] | [90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)[39m
+[2026-06-19T12:10:55.346Z] [1] | [90m    at node:internal/main/run_main_module:36:49[39m {
+[2026-06-19T12:10:55.346Z] [1] |   code: [32m'MODULE_NOT_FOUND'[39m,
+[2026-06-19T12:10:55.346Z] [1] |   requireStack: []
+[2026-06-19T12:10:55.346Z] [1] | }
+[2026-06-19T12:10:55.346Z] [1] |
+[2026-06-19T12:10:55.346Z] [1] | Node.js v22.13.0
+[2026-06-19T12:10:55.357Z] [1] | node:internal/modules/cjs/loader:1247
+[2026-06-19T12:10:55.390Z] [1] |   throw err;
+[2026-06-19T12:10:55.390Z] [1] |   ^
+[2026-06-19T12:10:55.390Z] [1] |
+[2026-06-19T12:10:55.390Z] [1] | Error: Cannot find module '/home/ubuntu/parquinho-timer/node_modules/jest-worker/build/workers/processChild.js'
+[2026-06-19T12:10:55.390Z] [1] | [90m    at Function._resolveFilename (node:internal/modules/cjs/loader:1244:15)[39m
+[2026-06-19T12:10:55.390Z] [1] | [90m    at Function._load (node:internal/modules/cjs/loader:1070:27)[39m
+[2026-06-19T12:10:55.390Z] [1] | [90m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[2026-06-19T12:10:55.390Z] [1] | [90m    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)[39m
+[2026-06-19T12:10:55.390Z] [1] | [90m    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)[39m
+[2026-06-19T12:10:55.390Z] [1] | [90m    at node:internal/main/run_main_module:36:49[39m {
+[2026-06-19T12:10:55.390Z] [1] |   code: [32m'MODULE_NOT_FOUND'[39m,
+[2026-06-19T12:10:55.390Z] [1] |   requireStack: []
+[2026-06-19T12:10:55.390Z] [1] | }
+[2026-06-19T12:10:55.390Z] [1] |
+[2026-06-19T12:10:55.390Z] [1] | Node.js v22.13.0
+[2026-06-19T12:10:55.404Z] [1] | node:internal/modules/cjs/loader:1247
+[2026-06-19T12:10:55.434Z] [1] /home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/src/utils/errors.js:130
+[2026-06-19T12:10:55.434Z] [1]     throw error;
+[2026-06-19T12:10:55.434Z] [1]     ^
+[2026-06-19T12:10:55.434Z] [1]
+[2026-06-19T12:10:55.434Z] [1] Error: Cannot find module '@expo/metro/metro/lib/formatBundlingError'
+[2026-06-19T12:10:55.434Z] [1] Require stack:
+[2026-06-19T12:10:55.434Z] [1] - /home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/src/start/server/metro/instantiateMetro.js
+[2026-06-19T12:10:55.434Z] [1] - /home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/src/start/server/metro/MetroBundlerDevServer.js
+[2026-06-19T12:10:55.434Z] [1] - /home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/src/start/server/DevServerManager.js
+[2026-06-19T12:10:55.434Z] [1] - /home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/src/start/startAsync.js
+[2026-06-19T12:10:55.434Z] [1] - /home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/src/start/index.js
+[2026-06-19T12:10:55.434Z] [1] - /home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/bin/cli
+[2026-06-19T12:10:55.434Z] [1] - /home/ubuntu/parquinho-timer/node_modules/expo/bin/cli
+[2026-06-19T12:10:55.434Z] [1]     at Function._resolveFilename (node:internal/modules/cjs/loader:1244:15)
+[2026-06-19T12:10:55.434Z] [1]     at Function._load (node:internal/modules/cjs/loader:1070:27)
+[2026-06-19T12:10:55.434Z] [1]     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+[2026-06-19T12:10:55.434Z] [1]     at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+[2026-06-19T12:10:55.434Z] [1]     at Module.require (node:internal/modules/cjs/loader:1335:12)
+[2026-06-19T12:10:55.434Z] [1]     at require (node:internal/modules/helpers:136:16)
+[2026-06-19T12:10:55.434Z] [1]     at _formatBundlingError (/home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/src/start/server/metro/instantiateMetro.js:44:57)
+[2026-06-19T12:10:55.434Z] [1]     at HmrServer.hmrServer._prepareMessage (/home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/src/start/server/metro/instantiateMetro.js:356:44)
+[2026-06-19T12:10:55.434Z] [1]     at processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-06-19T12:10:55.434Z] [1]     at HmrServer._handleFileChange (/home/ubuntu/parquinho-timer/node_modules/@expo/metro/node_modules/metro/src/HmrServer.js:259:21) {
+[2026-06-19T12:10:55.434Z] [1]   code: 'MODULE_NOT_FOUND',
+[2026-06-19T12:10:55.434Z] [1]   requireStack: [
+[2026-06-19T12:10:55.434Z] [1]     '/home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/src/start/server/metro/instantiateMetro.js',
+[2026-06-19T12:10:55.434Z] [1]     '/home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/src/start/server/metro/MetroBundlerDevServer.js',
+[2026-06-19T12:10:55.434Z] [1]     '/home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/src/start/server/DevServerManager.js',
+[2026-06-19T12:10:55.434Z] [1]     '/home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/src/start/startAsync.js',
+[2026-06-19T12:10:55.434Z] [1]     '/home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/src/start/index.js',
+[2026-06-19T12:10:55.434Z] [1]     '/home/ubuntu/parquinho-timer/node_modules/@expo/cli/build/bin/cli',
+[2026-06-19T12:10:55.434Z] [1]     '/home/ubuntu/parquinho-timer/node_modules/expo/bin/cli'
+[2026-06-19T12:10:55.434Z] [1]   ]
+[2026-06-19T12:10:55.434Z] [1] }
+[2026-06-19T12:10:55.434Z] [1]
+[2026-06-19T12:10:55.434Z] [1] Node.js v22.13.0
+[2026-06-19T12:10:55.537Z] [1]  ELIFECYCLE  Command failed with exit code 7.
+[2026-06-19T12:10:55.541Z] [1]  WARN   Local package.json exists, but node_modules missing, did you mean to install?
+[2026-06-19T12:10:55.563Z] [1] pnpm dev:metro exited with code 7
+[2026-06-19T12:10:55.564Z] --> Sending SIGTERM to other processes..
+[2026-06-19T12:10:55.612Z] [0]  ELIFECYCLE  Command failed.
+[2026-06-19T12:10:55.613Z] [0]  WARN   Local package.json exists, but node_modules missing, did you mean to install?
+[2026-06-19T12:10:55.620Z] [0] pnpm dev:server exited with code SIGTERM
+[2026-06-19T12:10:55.627Z] ELIFECYCLE  Command failed with exit code 1.
+[2026-06-19T12:10:55.627Z] WARN   Local package.json exists, but node_modules missing, did you mean to install?
+[2026-06-19T12:10:55.658Z] Dev server exited with code 1
