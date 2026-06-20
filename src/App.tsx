@@ -147,7 +147,14 @@ export default function App() {
 
   const loadDatabase = async () => {
     try {
-      const res = await fetch("/api/db");
+      // Add cache-busting parameter to force fresh data from server
+      const res = await fetch(`/api/db?t=${Date.now()}`, {
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      });
       if (res.ok) {
         const data = await res.json();
         setIsCloudConnected(true);
@@ -213,9 +220,11 @@ export default function App() {
   // Initialize and load datasets using REST polling setup
   useEffect(() => {
     loadDatabase();
+    // Reduced polling frequency: only check every 10 seconds instead of 3
+    // This prevents constant re-renders from alternating between old/new data
     const interval = setInterval(() => {
       loadDatabase();
-    }, 3000);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
 
