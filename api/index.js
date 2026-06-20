@@ -105,25 +105,30 @@ async function getDB() {
 
 async function saveDB(data) {
   dbCache = data;
+  console.log('[saveDB] Called with data keys:', Object.keys(data));
 
   const token = process.env.BLOB_READ_WRITE_TOKEN;
-  if (token) {
-    try {
-      const result = await put(DB_FILENAME, JSON.stringify(data, null, 2), { 
-        token,
-        access: 'public',
-        allowOverwrite: true
-      });
-      console.log('Database saved to Vercel Blob at:', result.url);
-    } catch (e) {
-      console.error('Failed to save to Vercel Blob:', e.message || e);
-    }
-  } else {
-    console.warn('BLOB_READ_WRITE_TOKEN not configured');
+  if (!token) {
+    console.error('[saveDB] CRITICAL: BLOB_READ_WRITE_TOKEN not configured!');
+    throw new Error('BLOB_READ_WRITE_TOKEN not configured');
   }
 
-  // Note: Local file system is read-only on Vercel
-  // Only Vercel Blob storage is used for persistence
+  try {
+    const jsonStr = JSON.stringify(data, null, 2);
+    console.log(`[saveDB] Saving ${jsonStr.length} bytes to Vercel Blob...`);
+    
+    const result = await put(DB_FILENAME, jsonStr, { 
+      token,
+      access: 'public',
+      allowOverwrite: true
+    });
+    
+    console.log('[saveDB] SUCCESS: Saved to', result.url, 'Size:', result.size);
+  } catch (e) {
+    console.error('[saveDB] FAILED:', e.message);
+    console.error('[saveDB] Error details:', e);
+    throw e;
+  }
 }
 
 // API Routes
@@ -144,25 +149,27 @@ app.get('/api/db', async (req, res) => {
 
 app.post('/api/db', async (req, res) => {
   try {
+    console.log('[POST /api/db] Received request');
     const db = await getDB();
     const merged = { ...db, ...req.body };
     await saveDB(merged);
     res.json({ success: true, data: merged });
   } catch (error) {
-    console.error('POST /api/db error:', error);
-    res.status(500).json({ error: 'Failed to save database' });
+    console.error('[POST /api/db] ERROR:', error.message);
+    res.status(500).json({ error: error.message });
   }
 });
 
 app.post('/api/db/:key', async (req, res) => {
   try {
+    console.log(`[POST /api/db/:key] Saving key: ${req.params.key}`);
     const db = await getDB();
     db[req.params.key] = req.body;
     await saveDB(db);
     res.json({ success: true, data: db });
   } catch (error) {
-    console.error(`POST /api/db/${req.params.key} error:`, error);
-    res.status(500).json({ error: 'Failed to save key' });
+    console.error(`[POST /api/db/:key] ERROR for key ${req.params.key}:`, error.message);
+    res.status(500).json({ error: error.message });
   }
 });
 
