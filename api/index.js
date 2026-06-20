@@ -121,6 +121,11 @@ async function saveDB(data) {
 // API Routes
 app.get('/api/db', async (req, res) => {
   try {
+    // Disable caching to ensure fresh data on every request
+    res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.set('Pragma', 'no-cache');
+    res.set('Expires', '0');
+    
     const db = await getDB();
     res.json({ ...db, isBlobActive: !!process.env.BLOB_READ_WRITE_TOKEN });
   } catch (error) {
