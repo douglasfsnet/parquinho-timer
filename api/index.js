@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
+import crypto from 'crypto';
 import { put, list, del } from '@vercel/blob';
 
 const app = express();
@@ -134,13 +135,20 @@ async function saveDB(data) {
 // API Routes
 app.get('/api/db', async (req, res) => {
   try {
-    // Disable caching to ensure fresh data on every request
-    res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+    // Disable ALL caching - Vercel CDN, browser, and proxies
+    res.set('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0');
     res.set('Pragma', 'no-cache');
     res.set('Expires', '0');
+    res.set('Surrogate-Control', 'no-store');
     
     const db = await getDB();
-    res.json({ ...db, isBlobActive: !!process.env.BLOB_READ_WRITE_TOKEN });
+    const data = { ...db, isBlobActive: !!process.env.BLOB_READ_WRITE_TOKEN };
+    
+    // Generate ETag from data hash to force revalidation
+    const etag = crypto.createHash('md5').update(JSON.stringify(data)).digest('hex');
+    res.set('ETag', etag);
+    
+    res.json(data);
   } catch (error) {
     console.error('GET /api/db error:', error);
     res.status(500).json({ error: 'Failed to fetch database' });
