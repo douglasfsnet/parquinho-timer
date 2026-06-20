@@ -114,12 +114,8 @@ async function saveDB(data) {
     console.warn('BLOB_READ_WRITE_TOKEN not configured');
   }
 
-  try {
-    fs.writeFileSync(LOCAL_DB_PATH, JSON.stringify(data, null, 2));
-    console.log('Database saved to local file');
-  } catch (e) {
-    console.warn('Failed to save to local file', e);
-  }
+  // Note: Local file system is read-only on Vercel
+  // Only Vercel Blob storage is used for persistence
 }
 
 // API Routes
