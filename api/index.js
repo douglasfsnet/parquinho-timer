@@ -101,11 +101,16 @@ async function saveDB(data) {
   const token = process.env.BLOB_READ_WRITE_TOKEN;
   if (token) {
     try {
-      await put(DB_FILENAME, JSON.stringify(data, null, 2), { token });
-      console.log('Database saved to Vercel Blob');
+      const result = await put(DB_FILENAME, JSON.stringify(data, null, 2), { 
+        token,
+        access: 'public'
+      });
+      console.log('Database saved to Vercel Blob at:', result.url);
     } catch (e) {
-      console.warn('Failed to save to Vercel Blob', e);
+      console.error('Failed to save to Vercel Blob:', e.message || e);
     }
+  } else {
+    console.warn('BLOB_READ_WRITE_TOKEN not configured');
   }
 
   try {
