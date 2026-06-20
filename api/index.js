@@ -68,7 +68,15 @@ async function getDB() {
         const res = await fetch(blobUrl);
         if (res.ok) {
           const cloudData = await res.json();
-          dbCache = { ...initialDB, ...cloudData };
+          // Use cloud data as-is, don't merge with initialDB to avoid duplicates
+          // Only use initialDB values for missing keys
+          dbCache = {
+            toys: cloudData.toys || initialDB.toys,
+            activeClients: cloudData.activeClients ?? [],
+            pricingConfig: cloudData.pricingConfig || initialDB.pricingConfig,
+            history: cloudData.history || [],
+            staffList: cloudData.staffList || initialDB.staffList
+          };
           return dbCache;
         }
       } else {
