@@ -104,7 +104,7 @@ async function saveDB(data) {
       const result = await put(DB_FILENAME, JSON.stringify(data, null, 2), { 
         token,
         access: 'public',
-        overwrite: true
+        allowOverwrite: true
       });
       console.log('Database saved to Vercel Blob at:', result.url);
     } catch (e) {
