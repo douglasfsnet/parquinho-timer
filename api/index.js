@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
-import { put, list } from '@vercel/blob';
+import { put, list, del } from '@vercel/blob';
 
 const app = express();
 
@@ -163,6 +163,27 @@ app.post('/api/db/:key', async (req, res) => {
   } catch (error) {
     console.error(`POST /api/db/${req.params.key} error:`, error);
     res.status(500).json({ error: 'Failed to save key' });
+  }
+});
+
+// Admin-only: Reset database to initial state (removes duplicates)
+app.post('/api/admin/reset-db', async (req, res) => {
+  try {
+    const token = process.env.BLOB_READ_WRITE_TOKEN;
+    if (token) {
+      // Delete the blob file
+      await del(DB_FILENAME, { token });
+      console.log('Deleted parquinho_database.json from Vercel Blob');
+    }
+    // Clear cache
+    dbCache = null;
+    blobUrl = null;
+    // Reinitialize with default data
+    await saveDB(initialDB);
+    res.json({ success: true, message: 'Database reset to initial state', data: initialDB });
+  } catch (error) {
+    console.error('POST /api/admin/reset-db error:', error);
+    res.status(500).json({ error: 'Failed to reset database' });
   }
 });
 
